@@ -3,19 +3,17 @@
 
 template <class T>
 
-void print_container(T& a, T& b)
+void print_container(const T& a)
 {
-	for (; a != b; ++a)
+	for (const auto& c : a)
 	
-		std::cout << *a << " ";
+		std::cout << c << " ";
 }
 
 int main()
 {
 	std::vector<std::string> my_v{ "one", "two", "three", "four" };
-	std::vector<std::string>::iterator i = my_v.begin();
-	std::vector<std::string>::iterator j = my_v.end();
-	print_container(i, j);
+	print_container(my_v);
 
 	return 0;
 }
